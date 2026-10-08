@@ -1,0 +1,132 @@
+.planner-page {
+  min-height: 100vh;
+  background-color: #fafafa;
+}
+
+/* Header */
+
+.planner-header {
+  text-align: center;
+  padding: 70px 20px 40px;
+}
+
+.planner-tag {
+  color: #e8790c;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.planner-header h1 {
+  font-size: 42px;
+  color: #172554;
+  margin-bottom: 15px;
+}
+
+.planner-header p:last-child {
+  max-width: 600px;
+  margin: auto;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Planner Card */
+
+.planner-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px 20px 80px;
+}
+
+.planner-card {
+  width: 100%;
+  max-width: 700px;
+  padding: 35px;
+  background-color: white;
+  border: 1px solid #eeeeee;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* Fields */
+
+.planner-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 22px;
+}
+
+.planner-field label {
+  margin-bottom: 8px;
+  color: #172554;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.planner-field input,
+.planner-field select {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  background-color: white;
+  color: #333;
+  font-size: 14px;
+  outline: none;
+}
+
+.planner-field input:focus,
+.planner-field select:focus {
+  border-color: #e8790c;
+  box-shadow: 0 0 0 3px rgba(232, 121, 12, 0.1);
+}
+
+/* Date Fields */
+
+.planner-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+/* Button */
+
+.plan-trip-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 5px;
+
+  border: none;
+  border-radius: 9px;
+
+  background-color: #e8790c;
+  color: white;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.plan-trip-btn:hover {
+  background-color: #c96000;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .planner-header h1 {
+    font-size: 34px;
+  }
+
+  .planner-card {
+    padding: 25px 20px;
+  }
+
+  .planner-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

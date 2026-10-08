@@ -1,0 +1,159 @@
+.explore-page {
+  min-height: 100vh;
+  background-color: #fafafa;
+}
+
+/* Header */
+
+.explore-header {
+  text-align: center;
+  padding: 70px 20px 40px;
+}
+
+.explore-tag {
+  color: #e8790c;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.explore-header h1 {
+  font-size: 42px;
+  color: #172554;
+  margin-bottom: 15px;
+}
+
+.explore-header > p:last-child {
+  max-width: 650px;
+  margin: auto;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Content */
+
+.explore-content {
+  padding: 20px 8% 80px;
+}
+
+/* Categories */
+
+.category-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.category-buttons button {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  background-color: white;
+  color: #444;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.category-buttons button:hover,
+.category-buttons button.active {
+  background-color: #e8790c;
+  color: white;
+  border-color: #e8790c;
+}
+
+/* Destination Grid */
+
+.destination-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.explore-card {
+  background-color: white;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #eee;
+}
+
+.explore-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Card Image */
+
+.card-image {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mountain {
+  background-color: #e5f1f8;
+}
+
+.beach {
+  background-color: #fff1d6;
+}
+
+.heritage {
+  background-color: #f5e6d3;
+}
+
+.culture {
+  background-color: #eee5f5;
+}
+
+/* Card Information */
+
+.card-info {
+  padding: 20px;
+  background-color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.card-info h3 {
+  margin: 0 0 6px;
+  color: #172554;
+  font-size: 21px;
+}
+
+.card-info p {
+  margin: 0 0 14px;
+  color: #777;
+}
+
+.card-info span {
+  font-size: 13px;
+  color: #e8790c;
+  font-weight: 600;
+}
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+  .destination-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .destination-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .explore-header h1 {
+    font-size: 34px;
+  }
+}
