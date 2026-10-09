@@ -1,6 +1,9 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import "./App.css";
 
+import { useState, useCallback } from "react";
+import SplashScreen from "./components/Logo";
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -13,8 +16,16 @@ import SavedTrips from "./pages/SavedTrips";
 import Map from "./pages/Map";
 
 function AppContent() {
-  const location = useLocation();
+  const [showSplash, setShowSplash] = useState(true);
 
+  const finishSplash = useCallback(() => {
+    setShowSplash(false);
+  }, []);
+  if (showSplash) {
+    return <SplashScreen onComplete={finishSplash} />;
+  }
+
+  const location = useLocation();
   return (
     <div className="app">
       <Navbar />
@@ -31,7 +42,7 @@ function AppContent() {
         </Routes>
       </div>
 
-      <Footer/>
+      <Footer />
     </div>
   );
 }
