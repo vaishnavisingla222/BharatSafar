@@ -1,6 +1,9 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import "./App.css";
 
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
 import Home from "./pages/Home";
 import Explore from "./pages/Explore";
 import Planner from "./pages/Planner";
@@ -14,6 +17,8 @@ function AppContent() {
 
   return (
     <div className="app">
+      <Navbar />
+
       <div key={location.pathname} className="page-transition">
         <Routes location={location}>
           <Route path="/" element={<Home />} />
@@ -25,6 +30,8 @@ function AppContent() {
           <Route path="/map" element={<Map />} />
         </Routes>
       </div>
+
+      <Footer/>
     </div>
   );
 }

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Explore.css";
-import Navbar from "../components/Navbar";
 import kerala from "../assets/kerala.png";
 import RishikeshMussorie from "../assets/RishikeshMussorie.png";
 import sevenSister from "../assets/sevenSister.png";
@@ -89,7 +88,7 @@ function Explore() {
 
   return (
     <div className="explore-page">
-      <Navbar />
+
 
       <section className="explore-header">
         <p className="explore-tag">DISCOVER INDIA</p>

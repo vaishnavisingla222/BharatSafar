@@ -1,10 +1,8 @@
 import "./Festivals.css";
-import Navbar from "../components/Navbar";
 
 function Festivals() {
   return (
     <div className="festival-page">
-      <Navbar />
 
       <section className="festival-header">
         <p className="festival-tag">CELEBRATE INDIA</p>

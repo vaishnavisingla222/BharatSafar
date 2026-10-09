@@ -1,7 +1,6 @@
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar";
 import "./SavedTrips.css";
 
 function SavedTrips() {
@@ -32,7 +31,6 @@ function SavedTrips() {
 
   return (
     <div className="saved-trips-page">
-      <Navbar />
 
       <main className="saved-trips-container">
         <header className="saved-trips-header">

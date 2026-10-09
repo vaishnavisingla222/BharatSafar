@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./Budget.css";
-import Navbar from "../components/Navbar";
 
 function Budget() {
   const [formData, setFormData] = useState({
@@ -156,7 +155,6 @@ function Budget() {
 
   return (
     <div className="budget-page">
-      <Navbar />
 
       <section className="budget-header">
         <p className="budget-tag">TRAVEL SMARTER</p>

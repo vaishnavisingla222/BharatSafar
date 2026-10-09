@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "./Planner.css";
-import Navbar from "../components/Navbar";
 
 function Planner() {
   const location = useLocation();
@@ -114,7 +113,6 @@ function Planner() {
 
   return (
     <div className="planner-page">
-      <Navbar />
 
       <section className="planner-header">
         <p className="planner-tag">PLAN YOUR JOURNEY</p>

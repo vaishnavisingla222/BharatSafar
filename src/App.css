@@ -28,3 +28,15 @@
     animation: none;
   }
 }
+
+
+.footer-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-email svg {
+  flex-shrink: 0;
+  color: #f59e0b;
+}

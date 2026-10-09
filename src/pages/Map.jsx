@@ -1,11 +1,9 @@
 
 import "./Map.css";
-import Navbar from "../components/Navbar";
 
 function Map() {
   return (
     <div className="map-page">
-      <Navbar />
 
       <section className="map-header">
         <p className="map-tag">YOUR NEXT ADVENTURE</p>

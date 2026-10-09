@@ -17,12 +17,21 @@
 
 /* Logo */
 
-.navbar-logo {
-  font-size: 23px;
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  font-size: 27px;
   font-weight: 800;
-  color: #172554;
-  letter-spacing: -0.5px;
-  white-space: nowrap;
+}
+
+.logo-hindi {
+  color: #025b09;
+}
+
+.logo-english {
+  color: #e8790c;
 }
 
 /* Navigation */

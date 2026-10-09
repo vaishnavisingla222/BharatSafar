@@ -4,7 +4,10 @@ import "./Navbar.css";
 function Navbar() {
   return (
     <nav className="navbar">
-      <Link to="/" className="navbar-logo">🇮🇳 BharatSafar</Link>
+      <Link to="/" className="logo">
+        <span className="logo-hindi">भारत</span>
+        <span className="logo-english">Safar</span>
+      </Link>
 
       <div className="navbar-links">
         <Link to="/">Home</Link>
