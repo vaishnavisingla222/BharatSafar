@@ -1,0 +1,254 @@
+
+.map-page {
+  min-height: 100vh;
+  background-color: #fafafa;
+}
+
+/* Header */
+
+.map-header {
+  text-align: center;
+  padding: 55px 20px 35px;
+}
+
+.map-tag {
+  color: #e8790c;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.map-header h1 {
+  color: #172554;
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.map-header > p:last-child {
+  max-width: 600px;
+  margin: auto;
+  color: #666;
+  line-height: 1.7;
+}
+
+/* Main Layout */
+
+.map-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 25px;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 20px 25px 70px;
+  align-items: start;
+}
+
+/* Map Panel */
+
+.map-panel {
+  min-width: 0;
+  height: 520px;
+  padding: 15px;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+}
+
+.map-placeholder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 11px;
+  background-color: #e6f3e9;
+  background-image:
+    radial-gradient(ellipse at 25% 30%, #c8e5cf 0 12%, transparent 13%),
+    radial-gradient(ellipse at 70% 25%, #c8e5cf 0 15%, transparent 16%),
+    radial-gradient(ellipse at 60% 75%, #c8e5cf 0 20%, transparent 21%),
+    linear-gradient(135deg, #e8f4ec, #d7ebdf);
+}
+
+/* Decorative Map Lines */
+
+.map-placeholder::before,
+.map-placeholder::after {
+  content: "";
+  position: absolute;
+  width: 140%;
+  height: 1px;
+  left: -20%;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.map-placeholder::before {
+  top: 40%;
+  transform: rotate(-18deg);
+}
+
+.map-placeholder::after {
+  top: 65%;
+  transform: rotate(25deg);
+}
+
+/* Destination Labels */
+
+.map-label {
+  position: absolute;
+  z-index: 1;
+  padding: 10px 13px;
+  border-radius: 9px;
+  background-color: white;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.label-north {
+  top: 13%;
+  left: 12%;
+}
+
+.label-east {
+  top: 30%;
+  right: 7%;
+}
+
+.label-west {
+  top: 48%;
+  left: 7%;
+}
+
+.label-south {
+  bottom: 12%;
+  left: 38%;
+}
+
+/* Map Center */
+
+.map-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 210px;
+  padding: 22px 15px;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.88);
+  z-index: 1;
+}
+
+.map-center span {
+  font-size: 40px;
+}
+
+.map-center h2 {
+  color: #172554;
+  font-size: 20px;
+  margin: 10px 0 5px;
+}
+
+.map-center p {
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* Sidebar */
+
+.map-sidebar {
+  padding: 25px 20px;
+  background-color: white;
+  border: 1px solid #eeeeee;
+  border-radius: 16px;
+}
+
+.map-sidebar > h2 {
+  color: #172554;
+  font-size: 21px;
+}
+
+.map-sidebar-description {
+  margin: 10px 0 22px;
+  color: #777;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Destination Items */
+
+.map-destination {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 16px 0;
+  border-top: 1px solid #eeeeee;
+}
+
+.map-destination > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  background-color: #fff3e0;
+  font-size: 23px;
+}
+
+.map-destination h3 {
+  color: #172554;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.map-destination p {
+  color: #777;
+  font-size: 12px;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .map-content {
+    grid-template-columns: 1fr;
+  }
+
+  .map-sidebar {
+    width: 100%;
+  }
+
+  .map-panel {
+    height: 450px;
+  }
+}
+
+@media (max-width: 550px) {
+  .map-header h1 {
+    font-size: 31px;
+  }
+
+  .map-content {
+    padding: 15px;
+  }
+
+  .map-panel {
+    height: 380px;
+    padding: 8px;
+  }
+
+  .map-label {
+    padding: 7px 8px;
+    font-size: 10px;
+  }
+
+  .map-center {
+    width: 165px;
+    padding: 15px 8px;
+  }
+
+  .map-center h2 {
+    font-size: 16px;
+  }
+}

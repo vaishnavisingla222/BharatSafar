@@ -1,0 +1,133 @@
+
+.saved-trips-page {
+  min-height: 100vh;
+  background-color: #fafafa;
+}
+
+/* Header */
+
+.saved-header {
+  text-align: center;
+  padding: 65px 20px 35px;
+}
+
+.saved-tag {
+  color: #e8790c;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.saved-header h1 {
+  color: #172554;
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.saved-header > p:last-child {
+  max-width: 600px;
+  margin: auto;
+  color: #666;
+  line-height: 1.7;
+}
+
+/* Main Content */
+
+.saved-content {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 20px 25px 70px;
+}
+
+/* Empty State */
+
+.saved-empty {
+  text-align: center;
+  padding: 55px 30px;
+  background-color: white;
+  border: 1px solid #eeeeee;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+}
+
+.saved-illustration {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff0dc;
+  border-radius: 50%;
+  font-size: 48px;
+}
+
+.saved-empty h2 {
+  color: #172554;
+  font-size: 27px;
+  margin-bottom: 15px;
+}
+
+.saved-empty > p {
+  max-width: 500px;
+  margin: 0 auto 25px;
+  color: #666;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* Explore Button */
+
+.saved-explore-btn {
+  display: inline-block;
+  padding: 13px 22px;
+  background-color: #e8790c;
+  color: white;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background-color 0.2s ease;
+}
+
+.saved-explore-btn:hover {
+  background-color: #c96000;
+}
+
+/* Travel Tip */
+
+.saved-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 25px;
+  padding: 20px;
+  background-color: #e8f2ff;
+  border-radius: 12px;
+}
+
+.saved-tip span {
+  font-size: 24px;
+}
+
+.saved-tip p {
+  color: #334155;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .saved-header h1 {
+    font-size: 32px;
+  }
+
+  .saved-empty {
+    padding: 40px 20px;
+  }
+
+  .saved-empty h2 {
+    font-size: 23px;
+  }
+}

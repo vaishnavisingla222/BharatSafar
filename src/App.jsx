@@ -6,6 +6,8 @@ import Explore from "./pages/Explore";
 import Planner from "./pages/Planner";
 import Festivals from "./pages/Festivals";
 import Budget from "./pages/Budget";
+import SavedTrips from "./pages/SavedTrips";
+import Map from "./pages/Map";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path="/planner" element={<Planner />} />
           <Route path="/festivals" element={<Festivals />} />
           <Route path="/budget" element={<Budget />} />
+          <Route path="/savedtrips" element={<SavedTrips />} />
+          <Route path="/map" element={<Map/>} />
         </Routes>
       </div>
     </BrowserRouter>
