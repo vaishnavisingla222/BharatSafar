@@ -131,3 +131,166 @@
     font-size: 23px;
   }
 }
+
+
+
+.saved-trips-container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 55px 24px;
+}
+
+.saved-trips-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.saved-trips-tag {
+  color: #f59e0b;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.saved-trips-header h1 {
+  color: #172554;
+  font-size: 36px;
+  margin: 0 0 12px;
+}
+
+.saved-trips-header > p:last-child {
+  color: #64748b;
+}
+
+.saved-empty {
+  max-width: 600px;
+  margin: 35px auto;
+  padding: 45px 25px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+}
+
+.saved-empty-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.saved-empty h2 {
+  color: #172554;
+  margin-bottom: 12px;
+}
+
+.saved-empty p {
+  color: #64748b;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.saved-plan-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #f59e0b;
+  color: #172554;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 8px;
+}
+
+.saved-plan-btn:hover {
+  background: #fbbf24;
+}
+
+.saved-explore-link {
+  display: block;
+  margin-top: 18px;
+  color: #1d4ed8;
+  text-decoration: none;
+}
+
+.saved-trips-count {
+  color: #64748b;
+  margin-bottom: 18px;
+}
+
+.saved-trips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 22px;
+}
+
+.saved-trip-card {
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(15, 23, 42, 0.06);
+}
+
+.saved-trip-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.saved-trip-icon {
+  font-size: 26px;
+}
+
+.saved-trip-label {
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.saved-trip-card h2 {
+  color: #172554;
+  font-size: 21px;
+  margin-bottom: 20px;
+  overflow-wrap: anywhere;
+}
+
+.saved-trip-details {
+  margin-bottom: 22px;
+}
+
+.saved-trip-details p {
+  color: #475569;
+  margin: 12px 0;
+  font-size: 14px;
+}
+
+.saved-trip-details span {
+  font-weight: 600;
+  color: #172554;
+}
+
+.saved-delete-btn {
+  width: 100%;
+  padding: 11px 16px;
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.saved-delete-btn:hover {
+  background: #fee2e2;
+}
+
+@media (max-width: 600px) {
+  .saved-trips-container {
+    padding: 35px 16px;
+  }
+
+  .saved-trips-header h1 {
+    font-size: 29px;
+  }
+}

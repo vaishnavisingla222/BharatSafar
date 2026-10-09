@@ -201,3 +201,182 @@
     gap: 0;
   }
 }
+
+/* Budget Results */
+
+.budget-results {
+  max-width: 1050px;
+  margin: 0 auto 70px;
+  padding: 30px;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+}
+
+.budget-results > h2 {
+  color: #172554;
+  font-size: 24px;
+  margin: 25px 0 12px;
+}
+
+.budget-results > h2:first-child {
+  margin-top: 0;
+}
+
+.budget-results > p {
+  color: #64748b;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Total and Per-Person Cost */
+
+.budget-result-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin: 25px 0 30px;
+}
+
+.budget-result-card {
+  padding: 24px;
+  background: #e8f2ff;
+  border-radius: 12px;
+}
+
+.budget-result-card span {
+  display: block;
+  color: #475569;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.budget-result-card h3 {
+  color: #172554;
+  font-size: 28px;
+  overflow-wrap: anywhere;
+}
+
+/* Expense Breakdown */
+
+.budget-breakdown {
+  padding: 20px;
+  background: #fafafa;
+  border: 1px solid #eeeeee;
+  border-radius: 12px;
+  margin: 18px 0 35px;
+}
+
+.budget-breakdown p {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 13px 0;
+  border-bottom: 1px solid #e5e7eb;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.budget-breakdown strong {
+  color: #172554;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.budget-breakdown .budget-total-row {
+  border-bottom: none;
+  padding-bottom: 0;
+  font-weight: 700;
+  color: #172554;
+}
+
+/* Traveller Contributions */
+
+.budget-participants {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin: 25px 0;
+}
+
+.budget-participant {
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  min-width: 0;
+}
+
+.budget-participant .budget-field:last-child {
+  margin-bottom: 0;
+}
+
+.budget-field input {
+  box-sizing: border-box;
+}
+
+/* Settlement Summary */
+
+.budget-settlement {
+  margin-top: 30px;
+  padding: 24px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.budget-settlement h3 {
+  color: #172554;
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+
+.budget-settlement > p {
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.budget-settlement strong {
+  color: #172554;
+}
+
+.budget-settlement .budget-settlement-row {
+  margin-top: 14px;
+  padding: 14px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .budget-results {
+    margin: 0 16px 40px;
+    padding: 20px;
+  }
+
+  .budget-result-grid,
+  .budget-participants {
+    grid-template-columns: 1fr;
+  }
+
+  .budget-result-card h3 {
+    font-size: 24px;
+  }
+
+  .budget-breakdown {
+    padding: 14px;
+  }
+
+  .budget-breakdown p {
+    gap: 10px;
+    font-size: 13px;
+  }
+
+  .budget-settlement {
+    padding: 18px;
+  }
+}
