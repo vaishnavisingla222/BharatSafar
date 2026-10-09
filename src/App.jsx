@@ -1,5 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import './App.css'
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import "./App.css";
 
 import Home from "./pages/Home";
 import Explore from "./pages/Explore";
@@ -9,20 +9,30 @@ import Budget from "./pages/Budget";
 import SavedTrips from "./pages/SavedTrips";
 import Map from "./pages/Map";
 
-function App() {
+function AppContent() {
+  const location = useLocation();
+
   return (
-    <BrowserRouter>
-      <div className="app">
-        <Routes>
+    <div className="app">
+      <div key={location.pathname} className="page-transition">
+        <Routes location={location}>
           <Route path="/" element={<Home />} />
           <Route path="/explore" element={<Explore />} />
           <Route path="/planner" element={<Planner />} />
           <Route path="/festivals" element={<Festivals />} />
           <Route path="/budget" element={<Budget />} />
           <Route path="/savedtrips" element={<SavedTrips />} />
-          <Route path="/map" element={<Map/>} />
+          <Route path="/map" element={<Map />} />
         </Routes>
       </div>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
     </BrowserRouter>
   );
 }

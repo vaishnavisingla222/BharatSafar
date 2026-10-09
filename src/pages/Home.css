@@ -174,3 +174,120 @@
     flex-direction: column;
   }
 }
+
+.explore-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 13px 26px;
+  background-color: #e8790c;
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.2s ease,
+              transform 0.2s ease;
+}
+
+.explore-btn:hover {
+  background-color: #c96000;
+  transform: translateY(-2px);
+}
+/* Home page entrance animation */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animate the navbar */
+
+.navbar {
+  animation: slideDown 0.7s ease-out both;
+}
+
+/* Animate the hero content */
+
+.hero-content h1 {
+  animation: fadeInUp 0.8s ease-out 0.15s both;
+}
+
+.hero-content p {
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.hero-content .explore-btn {
+  animation: fadeInUp 0.8s ease-out 0.45s both;
+}
+
+/* Respect accessibility preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar,
+  .hero-content h1,
+  .hero-content p,
+  .hero-content .explore-btn {
+    animation: none;
+  }
+}
+
+/* Banner entrance animation */
+
+@keyframes bannerReveal {
+  from {
+    opacity: 0;
+    transform: scale(1.06) translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.hero-banner {
+  display: block;
+  max-width: 100%;
+  animation: bannerReveal 1.2s ease-out both;
+  transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+/* Interactive hover effect */
+
+.hero-banner:hover {
+  transform: scale(1.025);
+  filter: brightness(1.06);
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-banner {
+    animation: none;
+    transition: none;
+  }
+
+  .hero-banner:hover {
+    transform: none;
+    filter: none;
+  }
+}

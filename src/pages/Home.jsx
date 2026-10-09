@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import Navbar from "../components/Navbar";
 import "./Home.css";
 import banner from "../assets/banner.png";
@@ -19,6 +21,9 @@ function Home() {
             Discover beautiful destinations, plan your trips, explore hidden
             gems, and travel smarter with BharatSafar.
           </p>
+          <Link to="/explore" className="explore-btn">
+            Explore Destinations →
+          </Link>
         </div>
       </section>
       <section className="features">
@@ -62,7 +67,6 @@ function Home() {
             <div className="feature-item">
               🎉 <span>Discover Festivals</span>
             </div>
-
           </div>
         </div>
       </section>

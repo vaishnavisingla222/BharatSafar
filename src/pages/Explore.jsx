@@ -74,7 +74,7 @@ function Explore() {
 
             <div className="card-info">
               <h3>Seven Sisters</h3>
-              <p></p>
+              <p>East India</p>
               <span>🛕 Culture</span>
             </div>
           </div>

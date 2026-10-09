@@ -5,3 +5,26 @@
 .app {
   min-height: 100vh;
 }
+
+.page-transition {
+  min-height: 100vh;
+  animation: pageEnter 0.45s ease-out both;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition {
+    animation: none;
+  }
+}
