@@ -1,304 +1,320 @@
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Explore.css";
+
 import kerala from "../assets/kerala.png";
 import RishikeshMussorie from "../assets/RishikeshMussorie.png";
 import sevenSister from "../assets/sevenSister.png";
 import west from "../assets/west.png";
+import shimla from "../assets/shimla.jpg"
+import manali from "../assets/manali.jpeg"
+import agra from "../assets/agra.webp"
+import varanasi from "../assets/varanasi.jpeg"
+import mysore from "../assets/mysore.avif"
+import goa from "../assets/goa.jpeg"
 
 const destinations = [
   {
-    name: "Rishikesh - Mussoorie",
-    state: "Uttarakhand",
+    name: "Shimla",
+    state: "Himachal Pradesh",
     category: "Mountains",
-    icon: "🏔️",
-    image: RishikeshMussorie,
-    description: "Mountain views, river adventures and peaceful escapes.",
-    attractions: ["Laxman Jhula area", "Kempty Falls", "Gun Hill"],
+    image: shimla,
+    description: "Enjoy pine forests, colonial architecture, and scenic Himalayan views.",
+    attractions: ["The Ridge", "Mall Road", "Jakhoo Temple"],
+    bestTime: "March to June",
     duration: "3–4 days",
-    bestTime: "March–June, September–November",
-    budget: "₹5,000–₹10,000 per person",
+    budget: "₹5,000–₹9,000",
   },
   {
-    name: "Kerala",
-    state: "Kerala",
-    category: "Beaches",
-    icon: "🌊",
-    image: kerala,
-    description: "Discover tropical coastlines, backwaters and greenery.",
-    attractions: ["Alleppey backwaters", "Munnar", "Kovalam Beach"],
-    duration: "5–7 days",
-    bestTime: "October–March",
-    budget: "₹8,000–₹15,000 per person",
+    name: "Manali",
+    state: "Himachal Pradesh",
+    category: "Mountains",
+    image: manali,
+    description: "Explore mountain valleys, rivers, adventure activities, and snowy landscapes.",
+    attractions: ["Solang Valley", "Old Manali", "Hadimba Temple"],
+    bestTime: "March to June",
+    duration: "4–5 days",
+    budget: "₹6,000–₹12,000",
   },
   {
     name: "Jaipur",
     state: "Rajasthan",
     category: "Heritage",
-    icon: "🏰",
     image: west,
-    description: "Explore royal palaces, historic forts and colourful markets.",
+    description: "Discover Rajasthan's royal forts, colorful markets, and pink-hued architecture.",
     attractions: ["Amber Fort", "Hawa Mahal", "City Palace"],
+    bestTime: "October to March",
     duration: "2–3 days",
-    bestTime: "October–March",
-    budget: "₹4,000–₹8,000 per person",
+    budget: "₹4,000–₹8,000",
   },
   {
-    name: "Seven Sisters",
-    state: "Northeast India",
+    name: "Udaipur",
+    state: "Rajasthan",
+    category: "Heritage",
+    image: west,
+    description: "Experience beautiful lakes, palaces, and the romantic charm of Rajasthan.",
+    attractions: ["Lake Pichola", "City Palace", "Fateh Sagar Lake"],
+    bestTime: "October to March",
+    duration: "2–3 days",
+    budget: "₹5,000–₹9,000",
+  },
+  {
+    name: "Agra",
+    state: "Uttar Pradesh",
+    category: "Heritage",
+    image: agra,
+    description: "Visit world-famous Mughal monuments and explore India's rich history.",
+    attractions: ["Taj Mahal", "Agra Fort", "Mehtab Bagh"],
+    bestTime: "October to March",
+    duration: "1–2 days",
+    budget: "₹3,000–₹6,000",
+  },
+  {
+    name: "Varanasi",
+    state: "Uttar Pradesh",
+    category: "Spiritual",
+    image: varanasi,
+    description: "Discover sacred ghats, ancient temples, and the spiritual atmosphere of the Ganges.",
+    attractions: ["Dashashwamedh Ghat", "Kashi Vishwanath Temple", "Assi Ghat"],
+    bestTime: "October to March",
+    duration: "2–3 days",
+    budget: "₹3,000–₹7,000",
+  },
+  {
+    name: "Goa",
+    state: "Goa",
+    category: "Beaches",
+    image: goa,
+    description: "Relax on tropical beaches and discover Portuguese-influenced architecture.",
+    attractions: ["Baga Beach", "Fort Aguada", "Old Goa"],
+    bestTime: "November to February",
+    duration: "3–5 days",
+    budget: "₹6,000–₹12,000",
+  },
+  {
+    name: "Kochi",
+    state: "Kerala",
     category: "Culture",
-    icon: "🌿",
+    image: kerala,
+    description: "Explore coastal heritage, historic streets, art, and Kerala's local cuisine.",
+    attractions: ["Fort Kochi", "Chinese Fishing Nets", "Mattancherry Palace"],
+    bestTime: "October to March",
+    duration: "2–3 days",
+    budget: "₹4,000–₹8,000",
+  },
+  {
+    name: "Alleppey",
+    state: "Kerala",
+    category: "Nature",
+    image: kerala,
+    description: "Enjoy peaceful backwaters, houseboats, and Kerala's lush green landscapes.",
+    attractions: ["Alleppey Backwaters", "Alappuzha Beach", "Kuttanad"],
+    bestTime: "October to March",
+    duration: "2–3 days",
+    budget: "₹5,000–₹10,000",
+  },
+  {
+    name: "Shillong",
+    state: "Meghalaya",
+    category: "Nature",
     image: sevenSister,
-    description: "Experience lush landscapes and diverse local cultures.",
-    attractions: ["Kaziranga National Park", "Shillong", "Tawang"],
-    duration: "5–8 days",
-    bestTime: "October–April",
-    budget: "₹10,000–₹20,000 per person",
+    description: "Discover misty hills, waterfalls, pine forests, and Northeast India's natural beauty.",
+    attractions: ["Umiam Lake", "Elephant Falls", "Shillong Peak"],
+    bestTime: "October to April",
+    duration: "3–4 days",
+    budget: "₹6,000–₹12,000",
+  },
+  {
+    name: "Rishikesh",
+    state: "Uttarakhand",
+    category: "Adventure",
+    image: RishikeshMussorie,
+    description: "Combine Himalayan scenery with river rafting, yoga, and riverside sunsets.",
+    attractions: ["Laxman Jhula area", "Triveni Ghat", "Neer Garh Waterfall"],
+    bestTime: "September to November and March to May",
+    duration: "2–3 days",
+    budget: "₹3,000–₹7,000",
+  },
+  {
+    name: "Mysuru",
+    state: "Karnataka",
+    category: "Heritage",
+    image: mysore,
+    description: "Explore royal palaces, traditional markets, and Karnataka's cultural heritage.",
+    attractions: ["Mysore Palace", "Chamundi Hills", "Devaraja Market"],
+    bestTime: "October to March",
+    duration: "2–3 days",
+    budget: "₹4,000–₹8,000",
   },
 ];
 
 const categories = [
   "All",
   "Mountains",
-  "Beaches",
   "Heritage",
+  "Spiritual",
+  "Beaches",
   "Culture",
+  "Nature",
+  "Adventure",
 ];
 
 function Explore() {
-  const [search, setSearch] = useState("");
-  const [activeCategory, setActiveCategory] = useState("All");
-  const [selectedDestination, setSelectedDestination] = useState(null);
   const navigate = useNavigate();
 
-  const filteredDestinations = destinations.filter((destination) => {
-    const searchText = search.trim().toLowerCase();
+  const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("All");
+  const [selectedDestination, setSelectedDestination] = useState(null);
 
+  const filteredDestinations = destinations.filter((destination) => {
     const matchesSearch =
-      destination.name.toLowerCase().includes(searchText) ||
-      destination.state.toLowerCase().includes(searchText) ||
-      destination.category.toLowerCase().includes(searchText);
+      destination.name.toLowerCase().includes(search.toLowerCase()) ||
+      destination.state.toLowerCase().includes(search.toLowerCase());
 
     const matchesCategory =
-      activeCategory === "All" ||
-      destination.category === activeCategory;
+      category === "All" || destination.category === category;
 
     return matchesSearch && matchesCategory;
   });
 
+  const planTrip = (destination) => {
+    navigate("/planner", {
+      state: { destination: destination.name },
+    });
+  };
+
   return (
     <div className="explore-page">
+      <div className="explore-header">
+        <h1>Explore India</h1>
+        <p>Discover incredible destinations, cultures, and experiences across India.</p>
+      </div>
 
+      <div className="explore-controls">
+        <input
+          type="text"
+          placeholder="Search destination or state..."
+          value={search}
+          onChange={(event) => setSearch(event.target.value)}
+        />
 
-      <section className="explore-header">
-        <p className="explore-tag">DISCOVER INDIA</p>
-        <h1>Where Will Your Next Journey Take You?</h1>
-        <p>
-          From peaceful mountains to sunny beaches and royal cities,
-          discover a destination that feels right for you.
-        </p>
-      </section>
-
-      <section className="explore-content">
-        <div className="explore-search">
-          <span aria-hidden="true">⌕</span>
-          <input
-            type="search"
-            placeholder="Search destinations, states or categories..."
-            aria-label="Search destinations"
-            value={search}
-            onChange={(event) => setSearch(event.target.value)}
-          />
-
-          {search && (
+        <div className="category-filters">
+          {categories.map((item) => (
             <button
-              type="button"
-              className="clear-search"
-              onClick={() => setSearch("")}
-              aria-label="Clear search"
+              key={item}
+              className={category === item ? "active" : ""}
+              onClick={() => setCategory(item)}
             >
-              ×
-            </button>
-          )}
-        </div>
-
-        <div className="category-buttons">
-          {categories.map((category) => (
-            <button
-              key={category}
-              type="button"
-              className={activeCategory === category ? "active" : ""}
-              onClick={() => setActiveCategory(category)}
-              aria-pressed={activeCategory === category}
-            >
-              {category}
+              {item}
             </button>
           ))}
         </div>
+      </div>
 
-        <div className="explore-results-heading">
-          <h2>
-            {activeCategory === "All"
-              ? "Discover Destinations"
-              : `${activeCategory} Getaways`}
-          </h2>
-          <p>
-            {filteredDestinations.length}{" "}
-            {filteredDestinations.length === 1
-              ? "destination"
-              : "destinations"}{" "}
-            found
-          </p>
-        </div>
+      <div className="destination-grid">
+        {filteredDestinations.map((destination) => (
+          <div className="destination-card" key={destination.name}>
+            <div className="card-image">
+              <img src={destination.image} alt={destination.name} />
+            </div>
 
-        {filteredDestinations.length > 0 ? (
-          <div className="destination-grid">
-            {filteredDestinations.map((destination) => (
-              <article
-                className="explore-card"
-                key={destination.name}
-                role="button"
-                tabIndex={0}
-                aria-label={`View details for ${destination.name}`}
+            <div className="card-content">
+              <span className="destination-category">
+                {destination.category}
+              </span>
+
+              <h3>{destination.name}</h3>
+              <p className="destination-state">{destination.state}</p>
+              <p>{destination.description}</p>
+
+              <button
+                className="view-details-button"
                 onClick={() => setSelectedDestination(destination)}
-                onKeyDown={(event) => {
-                  if (event.key === "Enter" || event.key === " ") {
-                    event.preventDefault();
-                    setSelectedDestination(destination);
-                  }
-                }}
               >
-                <div
-                  className={`card-image ${destination.category.toLowerCase()}`}
-                >
-                  <img src={destination.image} alt={destination.name} />
-                </div>
+                View Overview
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
 
-                <div className="card-info">
-                  <span className="destination-category">
-                    {destination.icon} {destination.category}
-                  </span>
-                  <h3>{destination.name}</h3>
-                  <p className="destination-state">
-                    📍 {destination.state}
-                  </p>
-                  <p className="destination-description">
-                    {destination.description}
-                  </p>
-                  <span className="view-details">
-                    View destination details →
-                  </span>
-                </div>
-              </article>
-            ))}
-          </div>
-        ) : (
-          <div className="explore-empty">
-            <h3>No destinations found</h3>
-            <p>
-              Try another search or choose a different category.
-            </p>
-            <button
-              type="button"
-              onClick={() => {
-                setSearch("");
-                setActiveCategory("All");
-              }}
-            >
-              Show all destinations
-            </button>
-          </div>
-        )}
-      </section>
+      {filteredDestinations.length === 0 && (
+        <p className="no-destinations">
+          No destinations found. Try another search or category.
+        </p>
+      )}
 
       {selectedDestination && (
         <div
           className="destination-modal-overlay"
           onClick={() => setSelectedDestination(null)}
         >
-          <section
+          <div
             className="destination-modal"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="destination-modal-title"
             onClick={(event) => event.stopPropagation()}
           >
             <button
-              type="button"
-              className="destination-modal-close"
-              aria-label="Close destination details"
+              className="modal-close"
               onClick={() => setSelectedDestination(null)}
+              aria-label="Close overview"
             >
-              ×
+              &times;
             </button>
 
-            <img
-              className="destination-modal-image"
-              src={selectedDestination.image}
-              alt={selectedDestination.name}
-            />
+            <div className="modal-image">
+              <img
+                src={selectedDestination.image}
+                alt={selectedDestination.name}
+              />
+            </div>
 
-            <div className="destination-modal-content">
-              <p className="explore-tag">
-                {selectedDestination.icon} {selectedDestination.category}
-              </p>
+            <div className="modal-content">
+              <span className="destination-category">
+                {selectedDestination.category}
+              </span>
 
-              <h2 id="destination-modal-title">
-                {selectedDestination.name}
-              </h2>
+              <h2>{selectedDestination.name}</h2>
+              <p className="destination-state">{selectedDestination.state}</p>
+              <p>{selectedDestination.description}</p>
 
-              <p className="destination-modal-location">
-                📍 {selectedDestination.state}
-              </p>
-
-              <p className="destination-modal-description">
-                {selectedDestination.description}
-              </p>
-
-              <h3>Popular Attractions</h3>
+              <h3>Top Attractions</h3>
               <ul>
                 {selectedDestination.attractions.map((attraction) => (
                   <li key={attraction}>{attraction}</li>
                 ))}
               </ul>
 
-              <div className="destination-modal-facts">
-                <div>
-                  <span>Recommended Duration</span>
-                  <strong>{selectedDestination.duration}</strong>
-                </div>
-
-                <div>
-                  <span>Best Time to Visit</span>
-                  <strong>{selectedDestination.bestTime}</strong>
-                </div>
-
-                <div>
-                  <span>Estimated Budget</span>
-                  <strong>{selectedDestination.budget}</strong>
-                </div>
-              </div>
-
-              <p className="destination-budget-note">
-                Budget figures are indicative estimates, not live prices.
-                Actual costs depend on your travel dates and preferences.
+              <p>
+                <strong>Best time:</strong> {selectedDestination.bestTime}
+              </p>
+              <p>
+                <strong>Suggested duration:</strong>{" "}
+                {selectedDestination.duration}
+              </p>
+              <p>
+                <strong>Estimated budget:</strong> {selectedDestination.budget} per person
               </p>
 
               <button
-                type="button"
-                className="destination-plan-btn"
-                onClick={() => {
-                  const destination = selectedDestination.name;
-                  setSelectedDestination(null);
-                  navigate("/planner", {
-                    state: { destination },
-                  });
-                }}
+                className="plan-trip-button"
+                onClick={() => planTrip(selectedDestination)}
               >
-                Plan This Trip →
+                Plan This Trip
+              </button>
+
+              <button
+                className="view-map-button"
+                onClick={() =>
+                  navigate("/map", {
+                    state: { destination: selectedDestination.name },
+                  })
+                }
+              >
+                View on Map
               </button>
             </div>
-          </section>
+          </div>
         </div>
       )}
     </div>

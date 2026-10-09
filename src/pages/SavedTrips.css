@@ -192,6 +192,9 @@
 .saved-plan-btn {
   display: inline-block;
   padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  margin: 30 px;
   background: #f59e0b;
   color: #172554;
   text-decoration: none;
@@ -204,10 +207,19 @@
 }
 
 .saved-explore-link {
-  display: block;
-  margin-top: 18px;
-  color: #1d4ed8;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  background: #f59e0b;
+  margin:30px;
+  color: #172554;
   text-decoration: none;
+  font-weight: 700;
+  border-radius: 8px;
+}
+.saved-explore-link:hover {
+  background: #fbbf24;
 }
 
 .saved-trips-count {

@@ -50,12 +50,11 @@ function SavedTrips() {
               Create a trip and it will appear here.
             </p>
 
-            <Link to="/planner" className="saved-plan-btn">
-              Plan a Trip
-            </Link>
-
             <Link to="/explore" className="saved-explore-link">
               Explore Destinations
+            </Link>
+            <Link to="/planner" className="saved-plan-btn">
+              Plan a Trip
             </Link>
           </section>
         ) : (
