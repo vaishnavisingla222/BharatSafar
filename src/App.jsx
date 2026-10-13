@@ -14,6 +14,8 @@ import Festivals from "./pages/Festivals";
 import Budget from "./pages/Budget";
 import SavedTrips from "./pages/SavedTrips";
 import Map from "./pages/Map";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 function AppContent() {
   const [showSplash, setShowSplash] = useState(true);
@@ -39,6 +41,8 @@ function AppContent() {
           <Route path="/budget" element={<Budget />} />
           <Route path="/savedtrips" element={<SavedTrips />} />
           <Route path="/map" element={<Map />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </div>
 

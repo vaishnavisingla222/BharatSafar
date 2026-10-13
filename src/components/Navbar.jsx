@@ -17,6 +17,8 @@ function Navbar() {
         <Link to="/budget">Budget</Link>
         <Link to="/festivals">Festivals</Link>
         <Link to="/savedtrips">Saved Trips</Link>
+        <Link to="/register">Register</Link>
+        <Link to="/login">Login</Link>
       </div>
     </nav>
   );
