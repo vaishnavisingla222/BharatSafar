@@ -48,7 +48,7 @@ function Footer() {
             </a>
 
             <a
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/in/vaishnavi-singla-8193442a9/"
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
@@ -63,7 +63,7 @@ function Footer() {
             </a>
 
             <a
-              href="https://github.com/"
+              href="https://github.com/vaishnavisingla222"
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
