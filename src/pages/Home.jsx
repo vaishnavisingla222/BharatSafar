@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import "./Home.css";
 import banner from "../assets/banner.png";
+import movie from "../assets/Incredible India!.mp4";
 
 function Home() {
   const [isSpeaking, setIsSpeaking] = useState(false);
@@ -22,46 +23,44 @@ experience the incredible diversity of India.
 
 Happy travelling, and enjoy your journey with Bharat Safar!`;
 
-  
-const handleWelcomeAudio = () => {
-  if (!("speechSynthesis" in window)) {
-    alert("Audio guidance is not supported in this browser.");
-    return;
-  }
+  const handleWelcomeAudio = () => {
+    if (!("speechSynthesis" in window)) {
+      alert("Audio guidance is not supported in this browser.");
+      return;
+    }
 
-  if (isSpeaking) {
+    if (isSpeaking) {
+      window.speechSynthesis.cancel();
+      setIsSpeaking(false);
+      return;
+    }
+
     window.speechSynthesis.cancel();
-    setIsSpeaking(false);
-    return;
-  }
 
-  window.speechSynthesis.cancel();
+    const speech = new SpeechSynthesisUtterance(welcomeMessage);
+    speech.lang = "en-IN";
+    speech.rate = 0.88;
+    speech.pitch = 1;
 
-  const speech = new SpeechSynthesisUtterance(welcomeMessage);
-  speech.lang = "en-IN";
-  speech.rate = 0.88;
-  speech.pitch = 1;
+    const voices = window.speechSynthesis.getVoices();
 
-  const voices = window.speechSynthesis.getVoices();
+    const indianVoice =
+      voices.find(
+        (voice) =>
+          voice.lang.toLowerCase() === "en-in" &&
+          /natural|neural|premium/i.test(voice.name),
+      ) || voices.find((voice) => voice.lang.toLowerCase() === "en-in");
 
-  const indianVoice = voices.find(
-    (voice) =>
-      voice.lang.toLowerCase() === "en-in" &&
-      /natural|neural|premium/i.test(voice.name)
-  ) || voices.find(
-    (voice) => voice.lang.toLowerCase() === "en-in"
-  );
+    if (indianVoice) {
+      speech.voice = indianVoice;
+    }
 
-  if (indianVoice) {
-    speech.voice = indianVoice;
-  }
+    speech.onstart = () => setIsSpeaking(true);
+    speech.onend = () => setIsSpeaking(false);
+    speech.onerror = () => setIsSpeaking(false);
 
-  speech.onstart = () => setIsSpeaking(true);
-  speech.onend = () => setIsSpeaking(false);
-  speech.onerror = () => setIsSpeaking(false);
-
-  window.speechSynthesis.speak(speech);
-};
+    window.speechSynthesis.speak(speech);
+  };
 
   return (
     <div className="home">
@@ -135,13 +134,15 @@ const handleWelcomeAudio = () => {
         </div>
 
         <div className="video-container">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/-u_jZQgxkMU?rel=0&modestbranding=1"
+          <video
+            src={movie}
             title="Discover India with BharatSafar"
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-            loading="lazy"
-          ></iframe>
+            controls
+            playsInline
+            preload="metadata"
+          >
+            Your browser does not support video playback.
+          </video>
         </div>
         <p className="video-caption">
           <span>✦</span> Discover India. Plan your next adventure with

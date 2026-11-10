@@ -326,13 +326,16 @@
 
 .video-container {
   width: 100%;
-  max-width: 950px;
-  margin: 0 auto;
+  max-width: 900px;
+  margin: 30px auto;
   overflow: hidden;
-  aspect-ratio: 16 / 9;
-  border-radius: 18px;
-  background: #173b2b;
-  box-shadow: 0 15px 40px rgba(25, 75, 53, 0.18);
+  border-radius: 16px;
+}
+
+.video-container video {
+  width: 100%;
+  display: block;
+  border-radius: 16px;
 }
 
 .video-container iframe {
