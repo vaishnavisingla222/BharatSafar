@@ -10,6 +10,12 @@ BharatSafar is an India-focused travel planning website designed to help users d
 
 ## ✨ Features
 
+### 🏠 Home Page
+- Welcoming landing page introducing the BharatSafar platform.
+- Travel-focused design highlighting India's destinations and cultural diversity.
+- Integrated local MP4 travel video showcasing the beauty of India.
+- Easy navigation to the main sections of the website.
+
 ### 🗺️ Explore Destinations
 - Discover destinations across different regions of India.
 - Search destinations by name or state.
@@ -37,11 +43,13 @@ BharatSafar is an India-focused travel planning website designed to help users d
 ### 💰 Budget Planner
 - Estimate travel expenses based on trip details.
 - Calculate accommodation, food, transport, and activity costs.
+- View an expense breakdown in a structured table.
 - Estimate individual contributions for group travel.
 
 ### ❤️ Saved Trips
 - View saved travel plans.
 - Revisit trip details and manage saved entries.
+- Delete trips that are no longer needed.
 
 ### 🎨 Responsive User Interface
 - Clean, travel-inspired visual design.
@@ -59,7 +67,7 @@ BharatSafar is an India-focused travel planning website designed to help users d
 | JavaScript (ES6+) | Application logic and interactivity |
 | Vite | Development server and build tool |
 | React Router | Client-side navigation |
-| HTML5 | Page structure |
+| HTML5 | Page structure and video integration |
 | CSS3 | Styling, layouts, animations, and responsiveness |
 | React Leaflet | Interactive map integration |
 | Leaflet | Map functionality |
@@ -83,7 +91,7 @@ Make sure you have installed:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/vaishnavisingla222/BharatSafar
+git clone https://github.com/vaishnavisingla222/BharatSafar.git
 ```
 
 ### 2. Navigate to the project directory
@@ -130,6 +138,8 @@ BharatSafar/
 │   └── bharatsafar-logo.png
 ├── src/
 │   ├── assets/
+│   │   ├── Incredible India!.mp4
+│   │   └── destination images...
 │   ├── components/
 │   │   ├── Navbar.jsx
 │   │   ├── Footer.jsx
@@ -152,7 +162,7 @@ BharatSafar/
 └── README.md
 ```
 
-*The structure above represents the current intended organization; adjust filenames if your repository differs.*
+*The structure above is representative. Update it if your actual repository contains additional files or different filenames.*
 
 ---
 
@@ -182,6 +192,7 @@ Future changes pushed to the configured production branch can trigger automatic 
 - Implement authentication and cloud-based saved trips.
 - Add transport and accommodation recommendations.
 - Integrate real-time travel prices and booking links.
+- Introduce a personal travel journal to record completed trips and memories.
 
 ---
 
